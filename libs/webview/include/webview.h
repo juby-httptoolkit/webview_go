@@ -2383,6 +2383,10 @@ private:
     if (res != S_OK) {
       return false;
     }
+    res = settings->put_IsStatusBarEnabled(FALSE);
+    if (res != S_OK) {
+      return false;
+    }
     init("window.external={invoke:s=>window.chrome.webview.postMessage(s)}");
     return true;
   }
